@@ -9,13 +9,20 @@ public class PickUp : MonoBehaviour
     [SerializeField] int noItemstoCollect = 4;
     [SerializeField] float dropForce = 5.0f;
     public Transform playerRightHand;
-    public Transform Atari;
+    //public Transform Atari;
     public SphereCollider myCollider;
 
     private GameObject pickedItem = null;
     private List<GameObject> collectedItems = new List<GameObject>();
     bool inRange = false;
     bool inRangeA = false;
+
+    [Header("Positions")]
+
+    public Transform GamepadPos;
+    public Transform WirePos;
+    public Transform DiskPos;
+    public Transform WhateverPos;
 
     private void Start()
     {
@@ -67,7 +74,22 @@ public class PickUp : MonoBehaviour
     void PlaceItem()
     {
         pickedItem.transform.SetParent(null);
-        pickedItem.transform.position = Atari.position;
+        switch(pickedItem.transform.name)
+
+        { case "Gamepad":
+                pickedItem.transform.position = GamepadPos.position;
+                Destroy(GamepadPos.gameObject); break;
+          case "Wire":
+                pickedItem.transform.position = WirePos.position;
+                Destroy(WirePos.gameObject); break;
+          case "Disc":
+                pickedItem.transform.position = DiskPos.position;
+                Destroy(DiskPos.gameObject); break;
+          case "Whatever":
+                pickedItem.transform.position = WhateverPos.position;
+                Destroy(WhateverPos.gameObject); break;
+        }
+
         collectedItems.Add(pickedItem);
         print("You have placed " + pickedItem.transform.name);
         pickedItem = null;
@@ -93,6 +115,8 @@ public class PickUp : MonoBehaviour
     {
         return collectedItems.Contains(itemToCheck);
     }
+
+    [Header("Item")]
 
     public GameObject item;
     private void OnTriggerEnter(Collider other)
