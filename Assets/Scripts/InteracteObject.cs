@@ -21,18 +21,25 @@ public class InteracteObject : MonoBehaviour
                 Interacting = true;
                 PlayerController.Instance.PlayerStat = PlayerController.PlayerStats.Intracting;
                 InteractEvent.Invoke();
-                CameraController.Instance.MainVCam.Priority = 0;
-                InteractVCam.Priority = 1;
+                if (InteractVCam != null)
+                {
+                    CameraController.Instance.MainVCam.Priority = 0;
+                    InteractVCam.Priority = 1;
+                }
             }
         }
         if(Interacting && Input.GetKeyDown(KeyCode.Escape)){
             Interacting = false;
 
-            PlayerController.Instance.PlayerStat = PlayerController.PlayerStats.Normal;
+            if(EndInteractionPos !=  null)
             PlayerController.Instance.transform.position = EndInteractionPos.position;
             EndInteractEvent.Invoke();
-            InteractVCam.Priority = 0;
-            CameraController.Instance.MainVCam.Priority = 1;
+
+            if (InteractVCam != null)
+            {
+                InteractVCam.Priority = 0;
+                CameraController.Instance.MainVCam.Priority = 1;
+            }
         }
     }
     private void OnTriggerEnter(Collider other)
