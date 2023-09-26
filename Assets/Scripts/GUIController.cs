@@ -10,47 +10,15 @@ public class GUIController : MonoBehaviour
     [Header("Helpers Text")]
     public TextMeshProUGUI InteractionText;
     public TextMeshProUGUI InputsText;
-    [Header("Inventory")]
-    public bool ShowInventory;
-    public Image InventoryImage;
-    public InventoryItem[] Items;
-    [System.Serializable]
-    public struct InventoryItem{
-        public string Name;
-        public Sprite Image;
-    }
+
     void Start()
     {
         Instance = this;
         InteractionText.gameObject.SetActive(false);
         InputsText.gameObject.SetActive(false);
-        for (int i = 0; i < Items.Length; i++)
-        {
-            InventoryImage.sprite = null;
-        }
     }
 
-  
-    void Update()
-    {
-        if (PlayerController.Instance.CurentItem == null || !ShowInventory)
-        {
-            InventoryImage.gameObject.SetActive(false);
-        }
-        else
-        {
-            InventoryImage.gameObject.SetActive(true);
-            for (int i = 0; i < Items.Length; i++)
-            {
-                if (PlayerController.Instance.CurentItem.ItemName == Items[i].Name)
-                {
-                    InventoryImage.sprite = Items[i].Image;
-                }
-            }
-        }
-
-    }
-
+ 
     public void OneFrameText(TextMeshProUGUI TMP, string txt)
     {
         if (gameObject.activeSelf)
@@ -75,12 +43,4 @@ public class GUIController : MonoBehaviour
             value = Mathf.Clamp(value - Time.deltaTime, Destination, value);
     }
 
-    public void CanShowInv()
-    {
-        ShowInventory = true;
-    }
-    public void HideInv()
-    {
-        ShowInventory = false;
-    }
 }
