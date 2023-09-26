@@ -128,7 +128,7 @@ public class PlayerController : MonoBehaviour
         {
             Vector3 Direction = Vector3.ClampMagnitude(position - transform.position,1);
 
-            transform.position = Vector3.MoveTowards(transform.position,position,speed*Time.deltaTime);
+            rb.position = Vector3.MoveTowards(transform.position,position,speed*Time.deltaTime);
 
             Vector3 AnimatonDirection = transform.InverseTransformVector(Direction);
 
