@@ -1,8 +1,28 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Materials/Default.mat.meta
 guid: fdeb9bb9c9ed082428e0c18451cbb3d7
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000
+=======
+guid: a50bd9a009c8dfc4ebd88cc8101225a7
+labels:
+- Tween
+- Tweening
+- Animation
+- HOTween
+- Paths
+- iTween
+- DFTween
+- LeanTween
+- Ease
+- Easing
+- Shake
+- Punch
+- 2DToolkit
+- TextMeshPro
+- Text
+folderAsset: yes
+DefaultImporter:
+>>>>>>> Stashed changes:Assets/Plugins/Demigiant/DOTween.meta
   userData: 
-  assetBundleName: 
-  assetBundleVariant: 

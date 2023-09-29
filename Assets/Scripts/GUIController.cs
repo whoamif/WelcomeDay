@@ -75,6 +75,7 @@ public class GUIController : MonoBehaviour
             value = Mathf.Clamp(value - Time.deltaTime, Destination, value);
     }
 
+<<<<<<< Updated upstream
     public void CanShowInv()
     {
         ShowInventory = true;
@@ -82,5 +83,10 @@ public class GUIController : MonoBehaviour
     public void HideInv()
     {
         ShowInventory = false;
+=======
+    public void RotationSpinPanel()
+    {
+  
+>>>>>>> Stashed changes
     }
 }

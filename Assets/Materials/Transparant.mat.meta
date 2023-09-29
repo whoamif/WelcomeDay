@@ -1,8 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Materials/Transparant.mat.meta
 guid: 4dcef4ae6efc2ab4c973158d5383bbd8
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000
+=======
+guid: b27f58ae5d5c33a4bb2d1f4f34bd036d
+folderAsset: yes
+DefaultImporter:
+>>>>>>> Stashed changes:Assets/Plugins/Demigiant/DOTween/Editor.meta
   userData: 
-  assetBundleName: 
-  assetBundleVariant: 
